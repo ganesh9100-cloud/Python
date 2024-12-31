@@ -1,0 +1,44 @@
+/* Register Form Stylings */
+.registerbox{
+    text-align: center;
+    background-image: url(../images/form.jpg);
+    background-size: cover;
+    background-color: rgba(229, 226, 226,0.8);
+    margin: 1% 25% 3% 25%;
+}
+.registerbox .inputfield , .registerBtn {
+    font-weight: 600;
+    width: 80%;
+    height:40px;
+    margin: 10px;
+    border: none ;
+    outline: none;
+}
+.inputfield{
+    font-size: 20px;     
+    padding: 10px;
+    background-color: rgb(255 255 255 / 57%);
+    color: darkcyan;
+}
+.inputfield:hover{
+    border-bottom: 1px solid rgba(126, 125, 125, 0.726);
+}
+.inputfield:focus{
+    border-bottom: 2px solid rgba(126, 125, 125, 0.726);
+}
+.registerBtn{
+    background-color: darkcyan;
+    color:white;
+    border-radius: 5px;
+    font-size: 25px;    
+}
+.registerBtn:hover{
+    background-color: white;
+    color:darkcyan;
+}
+.error {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1%;
+    color: #e88966;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InfyEvents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}" />    
+    <script src = "{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>    
+    <div class="header">
+        <div class="navbar" id="navb">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navbar-brand">
+                        InfyEvents
+                    </div>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNav">
+                    <ul class="nav navbar-nav myNav">
+                        <li class="active">Home</li>
+                        <li class="underline">Admin</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="quote" id="top_quote"> PARTICIPATE - LEARN - GROW </div>
+    </div>   
+    
+    <div class="quote"> <b> Admin Login </b> </div> 
+    <!-- Login Form -->
+    <div class="error"> <b> {{ message }} </b> </div>
+    <div class="registerbox">       
+        <!-- <form method="POST" action="">
+            {{ login_form.csrf_token }}
+            {{ login_form.login_name.label }} 
+            {{ login_form.login_name }} 
+            {{ login_form.login_password.label }}
+            {{ login_form.login_password }}
+            {{ login_form.login_submit }}
+        </form> -->
+        <form method="POST" action="">
+            {{ login_form.csrf_token }}
+            {{ login_form.login_name(class_ = "inputfield", placeholder = "User Name") }}
+            {{ login_form.login_password(class_ = "inputfield", placeholder = "Password") }}
+            {{ login_form.login_submit(class_ = "registerBtn") }}
+        </form>
+    </div>
+    <div class="footer">
+        Copyright 2021 All rights reserved | This template is made by ETA
+    </div>
+</body>
+</html>

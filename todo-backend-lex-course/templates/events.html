@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InfyEvents</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" /> -->
+    <link rel="stylesheet" href = "{{ url_for('static', filename='css/style.css') }}" />
+    <script src = "../static/js/script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar" id="navb">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navbar-brand">
+                        InfyEvents
+                    </div>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNav">
+                    <ul class="nav navbar-nav myNav">
+                        <a href="{{ url_for('get_events') }}"><li class="active">Home</li></a>
+                        {% if 'admin' in request.cookies %}                            
+                            <div id="welcome_quote"> Welcome {{ request.cookies['admin'] }} </div>
+                        {% else %}
+                            <a href="{{ url_for('admin') }}"><li class="underline">Admin</li></a>
+                        {% endif %}
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="quote" id="top_quote"> PARTICIPATE - LEARN - GROW </div>
+    </div>
+    
+    <!-- List of Events -->
+    <div class="eventList">
+        <div class="eventsrow">
+            <div class="quote"> Upcoming Events <b> {{ loc }} </b> </div>
+            <br>
+            {% if not loc or loc == 'us' %}
+                <div class="event">	
+                    <img width="50%" src = "../static/images/event.jpg" alt="" class="eventImage" />
+                    <div class="eventTitle">DC Hackathon</div>
+                    <div class="eventtime">2021-09-12 09:00:00</div>
+                    <div class="eventorg">Organizer : John Mathew</div>
+                </div>
+            {% endif %}
+            {% if not loc or loc == 'uk' %}
+                <div class="event">					
+                    <img width="50%" src = "../static/images/event.jpg" alt="" class="eventImage" />
+                    <div class="eventTitle">DRR Camp</div>
+                    <div class="eventtime">2022-01-05 11:30:00</div>
+                    <div class="eventorg">Organizer : Ben Fedrick</div>
+                </div>
+            
+                <div class="event">
+                    <img width="50%" src = "../static/images/event.jpg" alt="" class="eventImage" />
+                    <div class="eventTitle">Designing Webinar</div>					
+                    <div class="eventtime">2021-10-11 14:30:00</div>
+                    <div class="eventorg">Organizer : John Mathew</div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="footer">
+        Copyright 2021 All rights reserved | This template is made by ETA
+        <button type="button" class="btn btn-danger" data-bs-toggle="button">Toggle button</button>
+    </div>
+</body>
+</html>
